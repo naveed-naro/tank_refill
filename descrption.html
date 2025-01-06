@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tank Refill Optimization</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #ffffff, #e6f7ff);
+            color: #2e3b4e;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            font-family: 'Arial Black', Gadget, sans-serif;
+        }
+        h1 {
+            color: #004d99;
+            text-align: center;
+            border-bottom: 3px solid #0073e6;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            margin-top: 25px;
+            font-style: italic;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+        ul {
+            padding-left: 25px;
+            font-style: italic;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        code {
+            background-color: #f9f9f9;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Water Tank Refill Optimization</h1>
+    <h2>1. What is the Problem?</h2>
+    <p>The water supply management system must efficiently prioritize and refill water tanks with varying usage rates across locations. Tanks with higher consumption rates run out of water faster, risking shortages in critical areas. The solution needs to prioritize these tanks, estimate the time required for refills, and use a refill threshold to decide when tanks should be refilled to avoid service disruptions.</p>
+
+    <h2>2. How to Explain the Solution?</h2>
+    <ul>
+        <li><strong>Insertion Sort for Usage Prioritization:</strong> The code uses Insertion Sort to sort tanks by usage rate, ensuring refill trucks target tanks that require immediate refills.</li>
+        <li><strong>Threshold-Based Refill Suggestion:</strong> Tanks exceeding a usage threshold are identified for refill, optimizing focus on the most critical refills.</li>
+        <li><strong>Refill Time Estimation:</strong> The <code>estimateRefillTime()</code> function calculates refill times based on usage rates, helping schedule refills more effectively.</li>
+        <li><strong>Search Tank Details Using KMP:</strong> The KMP algorithm efficiently finds specific tank details, aiding in quick decision-making for individual tanks.</li>
+        <li><strong>Improved Efficiency:</strong> Combining sorting, thresholding, and refill estimation allows for optimized truck routing and manpower deployment.</li>
+    </ul>
+
+    <h2>3. Why Use Insertion Sort?</h2>
+    <ul>
+        <li><strong>Small Input Size:</strong> Insertion Sort performs well for small datasets. With a typical tank count not exceeding a few hundred, its time complexity of <code>O(n<sup>2</sup>)</code> is manageable.</li>
+        <li><strong>Partially Sorted Data:</strong> If usage rates are updated incrementally or lists are reused, Insertion Sort efficiently handles nearly sorted data with a best-case time complexity of <code>O(n)</code>.</li>
+        <li><strong>Simple and Easy to Implement:</strong> Insertion Sort is straightforward and beginner-friendly, making it easy to implement, modify, and debug.</li>
+        <li><strong>Low Memory Overhead:</strong> Insertion Sort is an in-place algorithm, requiring no additional memory allocation beyond the input array.</li>
+    </ul>
+
+    <h2>4. Why Use the KMP Algorithm?</h2>
+    <ul>
+        <li><strong>Efficient String Matching:</strong> The KMP algorithm offers fast substring search with a time complexity of <code>O(n + m)</code>, where <code>n</code> is the length of the text and <code>m</code> is the length of the pattern.</li>
+        <li><strong>Preprocessing with LPS Array:</strong> The Longest Prefix Suffix (LPS) array allows the algorithm to skip unnecessary comparisons, improving search efficiency.</li>
+        <li><strong>Accuracy in Search Results:</strong> KMP ensures precise string matching, avoiding false positives and providing reliable search results.</li>
+    </ul>
+
+    <footer>
+        &copy; 2025 Water Management Solutions | Designed for efficient water supply systems.
+    </footer>
+</body>
+</html>
